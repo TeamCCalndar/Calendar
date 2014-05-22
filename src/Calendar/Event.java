@@ -11,6 +11,13 @@ import java.util.UUID;
  * Created by Korvin-pc on 5/20/2014.
  */
 public class Event {
+    private final UUID id;
+    private final String title;
+    private final String description;
+    private final Date startDate;
+    private final Date endDay;
+    private final ArrayList attenders;
+
     public UUID getId() {
         return id;
     }
@@ -63,12 +70,17 @@ public class Event {
         return result;
     }
 
-    private final UUID id;
-    private final String title;
-    private final String description;
-    private final Date startDate;
-    private final Date endDay;
-    private final ArrayList attenders;
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", startDate=" + startDate +
+                ", endDay=" + endDay +
+                ", attenders=" + attenders +
+                '}';
+    }
 
     private Event(Builder builder){
         this.id = builder.id;
