@@ -1,8 +1,5 @@
 package Calendar;
 
-import com.oracle.webservices.internal.api.databinding.Databinding;
-
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
@@ -16,7 +13,7 @@ public class Event {
     private final String description;
     private final Date startDate;
     private final Date endDay;
-    private final ArrayList attenders;
+    private final List<String> attenders;
 
     public UUID getId() {
         return id;
@@ -38,7 +35,7 @@ public class Event {
         return endDay;
     }
 
-    public ArrayList getAttenders() {
+    public List<String> getAttenders() {
         return attenders;
     }
 
@@ -97,7 +94,7 @@ public class Event {
         private String description;
         private Date startDate;
         private Date endDay;
-        private ArrayList attenders;
+        private List<String> attenders;
 
         public Builder(){
 
@@ -111,6 +108,7 @@ public class Event {
             this.endDay = original.endDay;
             this.attenders = original.attenders;
         }
+
         public Builder id(UUID id){
             this.id = id;
             return this;
@@ -136,7 +134,7 @@ public class Event {
             return this;
         }
 
-        public Builder attenders(ArrayList attenders){
+        public Builder attenders(List<String> attenders){
             this.attenders = attenders;
             return this;
         }
