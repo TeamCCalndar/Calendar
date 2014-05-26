@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="calendar" class="Calendar.MainCalendar">
+        <constructor-arg>
+            <list>
+                <ref bean="event1" />
+                <ref bean="event2" />
+                <ref bean="event3" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="calendarService" class="Calendar.CalendarService">
+        <constructor-arg type="Calendar.MainCalendar" ref="calendar" />
+    </bean>
+
+    <bean id="event1" class="Calendar.Event" scope="prototype">
+        <property name="title" value="Important event" />
+    </bean>
+
+    <bean id="event2" class="Calendar.Event" scope="prototype">
+        <property name="title" value="Important meeting" />
+    </bean>
+
+    <bean id="event3" class="Calendar.Event" scope="prototype">
+        <property name="title" value="Important dinner" />
+    </bean>
+
+</beans>
