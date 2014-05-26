@@ -1,18 +1,33 @@
 package com.rodionbykov.calendar;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
-/**
- * Created by Rodion Bykov on 22.05.2014.
- */
-public class Calendar {
+public class Calendar implements Resource {
 
-    private HashMap events;
+    private ArrayList<Event> events;
 
-    public Calendar() {
-        //
+    public Calendar(ArrayList<Event> events) {
+        this.events = events;
     }
 
+    public ArrayList<Event> getEvents() {
+        return events;
+    }
 
+    public void setEvents(ArrayList<Event> events) {
+        this.events = events;
+    }
 
+    public ArrayList<Event> findEventsByName(String s){
+        ArrayList<Event> events = this.getEvents();
+        ArrayList<Event> result = new ArrayList<Event>();
+
+        for(Event event : events){
+            if(event.getTitle().contains(s)) {
+                result.add(event);
+            }
+        }
+
+        return result;
+    }
 }

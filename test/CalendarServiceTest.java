@@ -1,8 +1,10 @@
-/**
- * Created by Rodion Bykov on 20.05.2014.
- */
+import org.junit.Test;
+
 public class CalendarServiceTest {
 
+    @Test
+    public void testFindEventsByName(){
 
+    }
 
 }

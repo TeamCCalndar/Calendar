@@ -14,9 +14,8 @@ public class Event {
     private ArrayList attendees;
     private String location;
 
-    public Event(UUID id, String title) {
-        this.id = id;
-        this.title = title;
+    public Event() {
+
     }
 
     public UUID getId() {
